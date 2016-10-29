@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Express-react-hmr-boilerplate by gocreating</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Express-react-hmr-boilerplate</h1>
+        <h2>A boilerplate for scaffolding production-ready MERN stack projects.</h2>
+        <a href="https://github.com/gocreating/express-react-hmr-boilerplate" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="express-react-hmr-boilerplate" class="anchor" href="#express-react-hmr-boilerplate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Express-React-HMR-Boilerplate</h1>
+
+<p>A boilerplate for scaffolding production-ready MERN stack projects.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>master</th>
+<th>dev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build Status</td>
+<td><a href="https://travis-ci.org/gocreating/express-react-hmr-boilerplate"><img src="https://travis-ci.org/gocreating/express-react-hmr-boilerplate.svg?branch=master" alt="Build Status"></a></td>
+<td><a href="https://travis-ci.org/gocreating/express-react-hmr-boilerplate"><img src="https://travis-ci.org/gocreating/express-react-hmr-boilerplate.svg?branch=dev" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>Dependency Status</td>
+<td><a href="https://david-dm.org/gocreating/express-react-hmr-boilerplate"><img src="https://david-dm.org/gocreating/express-react-hmr-boilerplate.svg" alt="Dependency Status"></a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="https://express-react-hmr-boilerplate.herokuapp.com/">https://express-react-hmr-boilerplate.herokuapp.com/</a></p>
+
+<h2>
+<a id="techniques" class="anchor" href="#techniques" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Techniques</h2>
+
+<ul>
+<li>Nodejs + Express</li>
+<li>Reactjs + Redux + Redux-Thunk + React-Router + React-Router-Redux + Redux-Form + React-Intl</li>
+<li>Mongodb + Mongoose + MongoLab</li>
+<li>Livereload</li>
+<li>Server-Side Rendering (SSR) &amp; State Fetching (Isomorphic)</li>
+<li>Webpack + Code Splitting</li>
+<li>CSS Modules</li>
+<li>ES6/7 + Babel</li>
+<li>Travis CI</li>
+<li>Heroku Deploy Script</li>
+<li>PM2 for Production Serving</li>
+<li>Examples
+
+<ul>
+<li>Todo List App
+
+<ul>
+<li>List + Paginate</li>
+<li>Create</li>
+<li>Update</li>
+<li>Delete</li>
+</ul>
+</li>
+<li>Passport
+
+<ul>
+<li>Jwt Authentication</li>
+<li>Social Authentication</li>
+</ul>
+</li>
+<li>i18n</li>
+<li>Upload avatar</li>
+<li>Recaptcha</li>
+<li>Ajax progress bar</li>
+<li>Google Analytics</li>
+<li>Admin System</li>
+</ul>
+</li>
+<li>React Native</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install -g gulp
+npm install
+</code></pre>
+
+<h2>
+<a id="config-mongodb-required" class="anchor" href="#config-mongodb-required" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config MongoDB (<strong>Required</strong>)</h2>
+
+<p>Most services this boilerplate provides rely on mongoDB. You must config your own mongoDB URIs. The only thing you need to do is create your own <code>configs/project/mongo/credential.js</code> based on the provided template <code>configs/project/mongo/credential.tmpl.js</code>.</p>
+
+<h2>
+<a id="config-nodemailer-optional" class="anchor" href="#config-nodemailer-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Nodemailer (Optional)</h2>
+
+<h3>
+<a id="gmail" class="anchor" href="#gmail" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gmail</h3>
+
+<p>Here I take the popular gmail service as example.</p>
+
+<ol>
+<li>
+<p>Create your own <code>configs/project/nodemailer/credential.js</code></p>
+
+<p>You can check all supported services <a href="https://github.com/nodemailer/nodemailer-wellknown#supported-services">here</a></p>
+</li>
+<li>
+<p>Fix security issue</p>
+
+<p>If you are going to run tests on travis or deploy the app on heroku, you might meet the issue that the app cannot login your gmail account from travis/heroku server. You need to manually authorize permissions to your testing/production servers.</p>
+
+<blockquote>
+<p>This is also documented on <a href="https://github.com/nodemailer/nodemailer#tldr-usage-example">nodemailer</a></p>
+</blockquote>
+</li>
+</ol>
+
+<h2>
+<a id="config-google-analytics-optional" class="anchor" href="#config-google-analytics-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Google Analytics (Optional)</h2>
+
+<p>TBD</p>
+
+<h2>
+<a id="config-social-authentication-optional" class="anchor" href="#config-social-authentication-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config Social Authentication (Optional)</h2>
+
+<h3>
+<a id="facebook" class="anchor" href="#facebook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Facebook</h3>
+
+<p>TBD</p>
+
+<h3>
+<a id="linkedin" class="anchor" href="#linkedin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LinkedIn</h3>
+
+<p>TBD</p>
+
+<h2>
+<a id="config-recaptcha-optional" class="anchor" href="#config-recaptcha-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config ReCAPTCHA (Optional)</h2>
+
+<ol>
+<li>Get your API keys on <a href="https://www.google.com/recaptcha/admin">reCAPTCHA</a>
+</li>
+<li>Save keys in  <code>configs/project/recaptcha/credential.js</code>.</li>
+</ol>
+
+<h2>
+<a id="config-firebase-optional" class="anchor" href="#config-firebase-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config <a href="https://console.firebase.google.com/">Firebase</a> (Optional)</h2>
+
+<p>Firebase provides 5GB/user file storage for <a href="https://firebase.google.com/pricing/">free</a> and is backed up by google cloud storage service. Thus we use firebase storage <code>for free</code> to host user avatars.</p>
+
+<ol>
+<li>Follow the doc <a href="https://firebase.google.com/docs/server/setup">Add Firebase to your Server</a>
+</li>
+<li>Save the credential file to <code>configs/project/firebase/credential.json</code>
+</li>
+<li>
+<p>Update <code>configs/project/firebase/client.js</code></p>
+
+<ul>
+<li>Open <a href="https://console.firebase.google.com/">Firebase console</a>
+</li>
+<li>Enter your app</li>
+<li>Go to <code>Auth</code> page</li>
+<li>Click on <code>網路設定</code> and get your configuration</li>
+<li>
+<p>Replace the following part with your configuration</p>
+
+<pre><code>var config = {
+  apiKey: '&lt;your-api-key&gt;',
+  authDomain: '&lt;your-auth-domain&gt;',
+  databaseURL: '&lt;your-database-url&gt;',
+  storageBucket: '&lt;your-storage-bucket&gt;'
+};
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Update <code>configs/project/client.js</code> and <code>configs/project/server.js</code></p>
+
+<p>Make sure there is a <code>firebase</code> entry in each file:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// configs/project/client.js</span>
+<span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> {
+  <span class="pl-c">// ...</span>
+  firebase<span class="pl-k">:</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./firebase/client<span class="pl-pds">'</span></span>),
+  <span class="pl-c">// ...</span>
+};</pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// configs/project/server.js</span>
+<span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> {
+  <span class="pl-c">// ...</span>
+  firebase<span class="pl-k">:</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./firebase/credential.json<span class="pl-pds">'</span></span>),
+  <span class="pl-c">// ...</span>
+};</pre></div>
+</li>
+<li>
+<p>Setup firebase storage security rule</p>
+
+<p>We follow the doc <a href="https://firebase.google.com/docs/storage/security/user-security">Secure User Data</a>, and use the following rules to restrict user permissions.</p>
+
+<blockquote>
+<p>Don't forget to change the project name into your own</p>
+</blockquote>
+
+<pre><code>service firebase.storage {
+  match /b/express-react-hmr-boilerplate.appspot.com/o {
+    match /{env}/{userId}/avatar.jpg {
+      allow read;
+      allow write: if request.auth.uid == userId;
+    }
+  }
+}
+</code></pre>
+</li>
+</ol>
+
+<h2>
+<a id="build--run" class="anchor" href="#build--run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build &amp; Run</h2>
+
+<p>For development:</p>
+
+<pre><code>gulp
+</code></pre>
+
+<p>For production:</p>
+
+<pre><code>gulp build:production
+npm start
+</code></pre>
+
+<h2>
+<a id="test" class="anchor" href="#test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test</h2>
+
+<h3>
+<a id="test-on-local" class="anchor" href="#test-on-local" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test on local</h3>
+
+<pre><code>npm test
+</code></pre>
+
+<h3>
+<a id="test-on-travis" class="anchor" href="#test-on-travis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test on Travis</h3>
+
+<p>There are some sensitive configs inside the project, e.g., facebook app secret or firebase token, while we still need Travis to support our testing automation. Try the following command:</p>
+
+<pre><code>gulp dumpConfigs
+</code></pre>
+
+<p>It will show you a 3-step instruction to setup private Travis environment variables.</p>
+
+<blockquote>
+<p>To sync configs on local side and on travis, you need to repeat the steps every time you update configs or tests</p>
+</blockquote>
+
+<h2>
+<a id="deploy-on-heroku" class="anchor" href="#deploy-on-heroku" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deploy on <a href="https://www.heroku.com/">Heroku</a>
+</h2>
+
+<p>Please login heroku first, and run the command</p>
+
+<pre><code>gulp build:production
+gulp deploy [--app=&lt;heroku_app_name&gt;] [--create]
+</code></pre>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<ul>
+<li>
+<p><code>-a</code>, <code>--app</code></p>
+
+<p>Specify new or existing app name of heroku. Default will be package name inside <code>package.json</code>.</p>
+</li>
+<li>
+<p><code>-c</code>, <code>--create</code></p>
+
+<p>If you want to create new app on heroku, please use this switch.</p>
+</li>
+</ul>
+
+<h2>
+<a id="react-native" class="anchor" href="#react-native" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>React Native</h2>
+
+<p>For development, just use:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm run android</pre></div>
+
+<p>For production or distributing APK, please refer to the setup part of <a href="https://facebook.github.io/react-native/docs/signed-apk-android.html">Generating Signed APK</a>. You can use helper scripts below:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm run android-keygen
+npm run release-android
+npm run install-android</pre></div>
+
+<h2>
+<a id="setup-a-new-project" class="anchor" href="#setup-a-new-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup a new project</h2>
+
+<p>Follow the commands below to integrate this boilerplate into your own project as <code>mirror</code> branch.</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> <span class="pl-k">&lt;</span>your_project<span class="pl-k">&gt;</span>
+git flow init -d
+git remote add -t master mirror https://github.com/gocreating/express-react-hmr-boilerplate.git
+git fetch mirror master:mirror <span class="pl-c"># git fetch &lt;remote&gt; &lt;rbranch&gt;:&lt;lbranch&gt;</span>
+
+git flow feature start mirror
+git merge --no-ff --no-edit mirror
+git flow feature finish mirror
+
+<span class="pl-c"># git flow feature start tune-mirror</span>
+<span class="pl-c"># tune the boilerplate to suit your own project</span>
+<span class="pl-c"># git flow feature finish tune-mirror</span>
+
+git remote add origin <span class="pl-k">&lt;</span>your_project.git<span class="pl-k">&gt;</span>
+git push -u origin master</pre></div>
+
+<p>Once there is a new version of this boilerplate, you can upgrade with the following commands</p>
+
+<pre><code>git checkout mirror
+git pull mirror mirror
+git checkout develop
+git flow feature start upgrade-mirror
+git merge --no-ff --no-edit mirror
+git flow feature finish upgrade-mirror
+</code></pre>
+
+<h2>
+<a id="roadmap" class="anchor" href="#roadmap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Roadmap</h2>
+
+<h3>
+<a id="v10" class="anchor" href="#v10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>v1.0</h3>
+
+<ul>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/e5273694dd5a75305e8a778c0ac660d2e7340916">Travis Testing</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/88557e47a978238b0a0dee198a7c86f0aa01145a">Disable submit button when form submitting</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/4eff5b583b6ab3a70f36441d77805550c4224b14">Asynchronous redux-form validation (detect duplicate email)</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/ca4db0d594e13950e46b32c5458e1a695136c0c3">Error handling</a>
+
+<ul>
+<li>reference: <a href="http://goldbergyoni.com/checklist-best-practices-of-node-js-error-handling/">Checklist: Best Practices of Node.JS Error Handling</a>
+</li>
+</ul>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/e427d7c3a9efea971557b0a2d7a6397b43ca4760">PM2 Integration</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/039baadff0bdb22e5340153a2a9fe1935f87b7d9">Rename resource as resource<code>s</code></a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/daf1773e9e1bd43f7ce4b0106a77b03b78ae6c0c">Todo#Update API &amp; Todo#Edit Functionality</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/9668797568b5d4b6a3c7f6f47e54dff9ed343802">Pagination Mechanism</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/49f085f51054c7d8f8a7968f616a8ffc01458094">Bug Fix for Intl</a>
+
+<ul>
+<li>reference:
+
+<ol>
+<li><a href="https://github.com/yahoo/react-intl/issues/371">Changing locale and FormattedMessage not updated instantly</a></li>
+<li><a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options">react-redux API docs</a></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/1613ea6e4253f8216946ef0fc1f989293ed60e61">User Roles</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/4321886d3c9ecfb047013d1daa76c0ee3ca5412c">Admin</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/9af27196c9bc88764e47a79bd5e0044237c6c5a4">Google analytics</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/ccaaa608e7efa0a0c1693ddd7072c0e4e62d003b">Social Auth for Facebook And LinkedIn</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/5e4306d20a4feed40290739d0ca6f7bda1920df5">Reacr-Router-Redux Integration</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/e44eb0b078fe7d0610c00a5c63b165f2ed31039f">Use react-bootstrap in ErrorList</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/5655a29c74fca6f2af4b75538820470b1cfe9619">Google Recaptcha</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/616ca6edfae5ba4df361d5d6dbef0a28571e9ea2">Mail Service</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/5a6ef757d7499cae71f69b605460ff7868d3a5ec">Email Verification</a>
+</li>
+<li>[x] <a href="https://github.com/gocreating/express-react-hmr-boilerplate/commit/3b0b475edc9ba05269a15fec96a61930aa154fcc">Edit User Profile</a>
+</li>
+<li>[ ] Landing Page</li>
+<li>[ ] Add License</li>
+</ul>
+
+<h3>
+<a id="v10-1" class="anchor" href="#v10-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>v1.0+</h3>
+
+<ul>
+<li>[ ] Disqus Thread</li>
+<li>[ ] <a href="https://stripe.com/">Stripe</a> Payment System + Donation Button Example</li>
+<li>[ ] Facebook Messenger Bot Example</li>
+<li>[ ] Phone Verification</li>
+<li>[ ] Automatically Refresh Token</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/gocreating/express-react-hmr-boilerplate/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/gocreating/express-react-hmr-boilerplate/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/gocreating/express-react-hmr-boilerplate"></a> is maintained by <a href="https://github.com/gocreating">gocreating</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
